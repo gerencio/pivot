@@ -35,6 +35,7 @@ const TIMEZONES: Timezone[] = [
   new Timezone("America/Mexico_City"), // -6.0
   new Timezone("America/Chicago"), // -6.0
   new Timezone("America/New_York"), // -5.0
+  new Timezone("America/Sao_Paulo"), // -3.0
   new Timezone("America/Argentina/Buenos_Aires"), // -4.0
   Timezone.UTC,
   new Timezone("Asia/Jerusalem"), // +2.0
