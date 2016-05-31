@@ -2,6 +2,28 @@ import * as numeral from 'numeral';
 import { Dimension, FilterClause, Essence } from '../../models/index';
 import { DisplayYear, formatTimeRange } from '../../utils/time/time';
 
+//var language = {
+//  delimiters: {
+//    thousands: '.',
+//    decimal: ','
+//  },
+//  abbreviations: {
+//    thousand: 'mil',
+//    million: 'milhões',
+//    billion: 'b',
+//    trillion: 't'
+//  },
+//  ordinal: function (number: number) {
+//    return 'º';
+//  },
+//  currency: {
+//    symbol: 'R$'
+//  }
+//};
+
+//numeral.language('pr-br', language);
+
+
 export interface Formatter {
   (n: number): string;
 }

@@ -168,8 +168,8 @@ var Measure = (function () {
     Measure.prototype.formatDatum = function (datum) {
         return this.formatFn(datum[this.name]);
     };
-    Measure.DEFAULT_FORMAT = '0,0.0 a';
-    Measure.INTEGER_FORMAT = '0,0 a';
+    Measure.DEFAULT_FORMAT = '0.0,0 a';
+    Measure.INTEGER_FORMAT = '0.0 a';
     return Measure;
 })();
 exports.Measure = Measure;
