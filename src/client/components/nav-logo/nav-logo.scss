@@ -1,0 +1,18 @@
+@import '../../imports';
+
+.nav-logo {
+  padding-right: $nav-padding;
+  height: 60px;
+
+  .logo {
+    position: absolute;
+    left: $nav-padding;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 31px;
+
+    svg {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../imports';
+
+.vertical-axis {
+  pointer-events: none;
+
+  line.border {
+    stroke: $gray;
+  }
+
+  line.tick {
+    stroke: $gray;
+  }
+
+  text {
+    font-size: 12px;
+    fill: $text-medium;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../imports';
+
+.measures-tile {
+  .row {
+    padding-left: $padding-compact;
+    height: $measure-height;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 12px;
+    }
+
+    .label {
+      @include ellipsis;
+      position: absolute;
+      top: 7px;
+      bottom: 0;
+      left: 37px;
+      right: 10px;
+    }
+
+    &:hover {
+      background: $hover;
+    }
+  }
+
+  .checkbox {
+    margin-top: 2px;
+  }
+}

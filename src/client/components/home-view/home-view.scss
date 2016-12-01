@@ -1,0 +1,30 @@
+@import '../../imports';
+
+.home-view {
+  .home-header-bar {
+    @include pin-top($header-height);
+  }
+
+  .container {
+    @include unpin-top($header-height);
+    overflow: scroll;
+  }
+
+  .golden-center {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .home {
+    @extend %menu-cont;
+    width: 460px;
+
+    .items {
+      .item {
+        .icon svg path {
+          fill: $brand;
+        }
+      }
+    }
+  }
+}

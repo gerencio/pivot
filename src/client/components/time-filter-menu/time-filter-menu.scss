@@ -1,0 +1,38 @@
+@import '../../imports';
+
+.time-filter-menu {
+
+  .cont {
+    margin-top: 18px;
+
+    .type {
+      @extend %input-top-label;
+    }
+
+    .buttons {
+      margin-bottom: $form-spacing-compact;
+
+      button {
+        @extend %button-secondary;
+        min-width: 0;
+        padding: 0;
+        width: 17.5%;
+        margin-right: 3%;
+
+        &.selected {
+          @extend %button-primary;
+          min-width: 0;
+          padding: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .preview {
+      @extend %indicator-field;
+    }
+  }
+}

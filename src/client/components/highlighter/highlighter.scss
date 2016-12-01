@@ -1,0 +1,27 @@
+@import '../../imports';
+
+.highlighter {
+  pointer-events: none;
+
+  .frame {
+    position: absolute;
+    height: 100%;
+    border: 1px dashed $highlight-border;
+    border-radius: 2px;
+    z-index: 1; // Put this above the whiteout
+
+    .highlight-controls {
+      position: absolute;
+      right: -($highlight-button-size + $highlight-button-frame-gap);
+    }
+  }
+
+  .whiteout {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background: $white;
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../imports';
+
+.chart-line {
+  pointer-events: none;
+
+  .area {
+    stroke: none;
+    fill: $main-time-area;
+    fill-opacity: .9;
+  }
+
+  .line {
+    fill: none;
+    stroke: $main-time-line;
+    stroke-width: 1.6px;
+  }
+
+  .singleton {
+    fill: $main-time-line;
+    stroke: none;
+  }
+
+  .hover {
+    fill: $white;
+    stroke: $main-time-line;
+    stroke-width: 2;
+  }
+}

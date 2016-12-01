@@ -1,0 +1,39 @@
+@import '../../imports';
+
+$action-size: 50px;
+
+.dimension-actions-menu {
+  padding: 8px;
+
+  .action {
+    display: inline-block;
+    width: $action-size;
+    height: $action-size;
+    cursor: pointer;
+    text-align: center;
+    color: $brand;
+    font-size: 12px;
+
+    svg {
+      width: 18px;
+      padding-top: 7px;
+      padding-bottom: 4px;
+
+      path {
+        fill: $brand;
+      }
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 3px;
+        right: 3px;
+        background: $hover;
+      }
+    }
+  }
+}

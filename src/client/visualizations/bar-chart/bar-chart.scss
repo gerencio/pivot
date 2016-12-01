@@ -1,0 +1,72 @@
+@import '../../imports';
+
+.bar-chart {
+  .measure-bar-charts {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: $vis-h-padding;
+  }
+
+  .measure-bar-chart {
+    .vis-measure-label {
+      position: absolute;
+      left: 6px;
+      top: 12px;
+    }
+
+    .vis-bottom {
+      pointer-events: none;
+      stroke: $gray;
+    }
+
+    g.bars {
+      g.bar {
+        &.not-selected {
+          fill-opacity: 0.5;
+        }
+
+        &.hover {
+          fill-opacity: 0.9;
+        }
+
+        > rect.background {
+          pointer-events: none;
+          fill: $brand;
+        }
+
+        > rect.mouse-event-target {
+          fill: $white;
+          fill-opacity: 0.001;
+        }
+
+        .selection {
+          pointer-events: none;
+          fill: none;
+          stroke: $brand;
+        }
+      }
+    }
+
+    .mask {
+      fill: $white;
+    }
+
+    .slanty-labels {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .slanty-label {
+      @include ellipsis;
+      position: absolute;
+      width: 100px;
+      height: 20px;
+      top: 3px;
+      transform: rotate(-43deg);
+      transform-origin: right top;
+      text-align: right;
+      cursor: default;
+      overflow: hidden;
+    }
+  }
+}

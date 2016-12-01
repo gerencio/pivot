@@ -1,0 +1,35 @@
+@import '../../imports';
+
+.segment-bubble {
+  @extend %menu-cont;
+  position: absolute;
+  background: rgba($white, 0.9);
+  padding: 10px;
+  text-align: center;
+  transform: translate(-50%, -100%);
+  max-width: 400px;
+
+  .text {
+    .segment {
+      color: #999;
+      line-height: 17px;
+      display: block;
+      padding-bottom: 2px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+
+    .measure-value {
+      white-space: nowrap;
+    }
+  }
+
+  .segment-action-buttons:nth-child(n+2) {
+    margin-top: 7px;
+  }
+
+  .shpitz {
+    left: 50%;
+    top: 100%;
+  }
+}

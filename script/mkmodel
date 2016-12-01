@@ -1,0 +1,113 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var mkdirp = require('mkdirp');
+
+if (process.argv.length !== 3) {
+  console.log('Usage: mkmodel <model-name>');
+  process.exit();
+}
+
+var name = process.argv[2];
+
+if (!/^([a-z-])+$/.test(name)) {
+  console.log('must be a hyphen case name');
+  process.exit();
+}
+
+var path = './src/common/models/' + name + '/';
+mkdirp.sync(path);
+console.log('Making path:', path);
+
+var camelName = name.replace(/(^|-)[a-z]/g, (s) => s.replace('-', '').toUpperCase());
+
+function writeFile(path, data) {
+  try {
+    return fs.writeFileSync(path, data, {
+      flag: 'wx', // x = fail if file exists
+      encoding: 'utf8'
+    });
+  } catch (error) {
+    return console.log("Skipping " + path);
+  }
+}
+
+// Make the TypeScript file
+writeFile(path + name + '.ts',
+`import { Class, Instance, isInstanceOf } from 'immutable-class';
+import { $, Expression } from 'plywood';
+
+// I am: export * from './${name}/${name}';
+
+export interface ${camelName}Value {
+
+}
+
+export interface ${camelName}JS {
+
+}
+
+var check: Class<${camelName}Value, ${camelName}JS>;
+export class ${camelName} implements Instance<${camelName}Value, ${camelName}JS> {
+
+  static is${camelName}(candidate: any): candidate is ${camelName} {
+    return isInstanceOf(candidate, ${camelName});
+  }
+
+  static fromJS(parameters: ${camelName}JS): ${camelName} {
+    var value: ${camelName}Value = {
+      /* */
+    };
+    return new ${camelName}(value);
+  }
+
+  constructor(parameters: ${camelName}Value) {
+
+  }
+
+  public valueOf(): ${camelName}Value {
+    return {
+
+    };
+  }
+
+  public toJS(): ${camelName}JS {
+    return {
+
+    };
+  }
+
+  public toJSON(): ${camelName}JS {
+    return this.toJS();
+  }
+
+  public toString(): string {
+    return '[' + ${camelName} + ']';
+  }
+
+  public equals(other: ${camelName}): boolean {
+    return ${camelName}.is${camelName}(other); // && more...
+  }
+
+}
+check = ${camelName};
+`);
+
+
+// Make the TypeScript test file
+writeFile(path + name + '.mocha.ts',
+`import { expect } from 'chai';
+import { testImmutableClass } from 'immutable-class/build/tester';
+
+import { $, Expression } from 'plywood';
+import { ${camelName} } from './${name}';
+
+describe('${camelName}', () => {
+  it('is an immutable class', () => {
+    testImmutableClass(${camelName}, [
+
+    ]);
+  });
+
+});
+`);

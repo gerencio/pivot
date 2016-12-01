@@ -1,0 +1,49 @@
+@import '../../imports';
+
+$bottom-margin: 12px;
+$title-margin: 6px;
+
+.split-menu {
+
+  .dropdown {
+    margin-bottom: $bottom-margin;
+  }
+
+  .sort-direction {
+    .dropdown {
+      margin-right: 38px;
+    }
+
+    .direction {
+      @extend %input-cont;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 32px;
+      height: $input-height;
+
+      svg {
+        position: absolute;
+        height: 13px;
+        top: 7px;
+        left: 11px;
+      }
+
+      &.ascending svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .button-bar {
+    .ok {
+      @extend %button-primary;
+      min-width: 60px;
+      margin-right: 8px;
+    }
+
+    .cancel {
+      @extend %button-secondary;
+    }
+  }
+}

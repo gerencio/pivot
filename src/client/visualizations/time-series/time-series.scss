@@ -1,0 +1,36 @@
+@import '../../imports';
+
+.time-series {
+  .measure-time-charts {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: $vis-h-padding;
+  }
+
+  .measure-time-chart {
+    .vis-measure-label {
+      position: absolute;
+      left: 6px;
+      top: 12px;
+    }
+
+    .vis-bottom {
+      pointer-events: none;
+      stroke: $gray;
+    }
+
+    .highlighter {
+      @include pin-full;
+    }
+
+    &:nth-child(n+2) { // same as not(first-child)
+      .highlighter .frame {
+        border-top: 0;
+      }
+    }
+  }
+
+  .bottom-axis {
+    padding-left: $vis-h-padding;
+  }
+}

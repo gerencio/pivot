@@ -1,0 +1,25 @@
+@import '../../imports';
+
+$arrow-width: 16px;
+
+.fancy-drag-indicator {
+  pointer-events: none;
+
+  .drag-ghost-element {
+    position: absolute;
+    // left: 0; It gets left from the JS
+    top: $control-padding-v;
+    bottom: $control-padding-v;
+    width: $item-width;
+    border: 1px dashed $border-darker;
+    border-radius: 4px;
+  }
+
+  .drag-ghost-arrow {
+    position: absolute;
+    // left: 0; It gets left from the JS
+    top: -12px;
+    width: $arrow-width;
+    margin-left: -$arrow-width / 2;
+  }
+}

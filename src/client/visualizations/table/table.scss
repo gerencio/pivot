@@ -1,0 +1,96 @@
+@import '../../imports';
+
+$header-height: 38px;
+$segment-width: 300px;
+$measure-width: 130px;
+$row-height: 30px;
+$space-left: 10px;
+$measure-column-padding-left: 10px;
+
+$header-padding-top: 12px;
+
+.table {
+
+  // Used for both row (i.e. body rows) and segments
+  @mixin row-style {
+    position: absolute;
+    height: $row-height;
+    border-bottom: 1px solid $border-super-light;
+    left: 0;
+
+    &.hover {
+      background: $hover;
+    }
+
+    &.selected {
+      background: $hover;
+    }
+
+    &.not-selected {
+      color: #a6a6a6;
+    }
+  }
+
+  @mixin sort-arrow {
+    width: 8px;
+    right: -4px;
+
+    &.ascending {
+      transform: rotate(180deg);
+    }
+  }
+
+  .corner {
+    position: absolute;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    width: $segment-width;
+    height: $header-height;
+    overflow: hidden;
+    padding: $header-padding-top 0 0 #{$space-left + 6px};
+    border-bottom: 1px solid $border-super-light;
+
+    > .corner-wrap {
+      display: inline-block;
+      max-width: calc(100% - 10px);
+    }
+
+    .sort-arrow {
+      @include sort-arrow;
+    }
+  }
+
+  .scroller {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @import './header';
+    @import './body'; // actual values
+    @import './highlight-cont'; // highlighter
+
+    .segment-labels {
+      margin-left: $space-left;
+
+      .segment {
+        @include row-style;
+
+        background-color: $white;
+
+        white-space: nowrap;
+        padding-left: 6px;
+
+        overflow: hidden;
+        padding-top: 8px;
+      }
+    }
+
+    > .horizontal-scroll-shadow {
+      height: $header-height;
+    }
+  }
+}
+

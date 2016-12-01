@@ -1,0 +1,19 @@
+@import '../../imports';
+
+.time-axis {
+  @include pin-full;
+
+  line {
+    pointer-events: none;
+  }
+
+  line {
+    stroke: $gray;
+  }
+
+  text {
+    text-anchor: middle;
+    font-size: 12px;
+    fill: $text-medium;
+  }
+}

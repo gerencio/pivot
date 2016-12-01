@@ -1,0 +1,16 @@
+@import '../../imports';
+
+.dimension-measure-panel {
+  padding: $tile-margin-v $tile-margin-h;
+  display: flex;
+  flex-direction: column;
+
+  .dimension-list-tile {
+    margin-bottom: 1px;
+    border-radius: $corner $corner 0 0;
+  }
+
+  .measures-tile {
+    border-radius: 0 0 $corner $corner;
+  }
+}

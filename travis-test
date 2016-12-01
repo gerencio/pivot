@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if grep -rq 'describe\.only' ./build
+  then
+    echo "describe.only found. Please update your test"
+    exit 1
+fi
+
+if grep -rq 'it\.only' ./build
+  then
+    echo "it.only found. Please update your test"
+    exit 1
+fi
+
+if grep -rq '\.\./client/' ./src/common
+  then
+    echo "'../client' reference found in common. Please update your code"
+    exit 1
+fi
+
+if grep -rq '\.\./server/' ./src/common
+  then
+    echo "'../server' reference found in common. Please update your code"
+    exit 1
+fi
+
+gulp all

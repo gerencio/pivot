@@ -1,0 +1,58 @@
+@import '../../imports';
+
+.modal {
+  @include pin-full;
+
+  .backdrop {
+    @include pin-full;
+    background: $black;
+    opacity: 0.2;
+  }
+
+  .golden-center {
+    @include pin-full;
+  }
+
+  .modal-window {
+    @extend %modal-cont;
+    width: 420px;
+    padding: $modal-window-padding;
+    background: $white;
+
+    .modal-title {
+      line-height: $modal-header-height;
+      font-size: 17px;
+      margin-bottom: 16px;
+
+      .close {
+        top: 0;
+        right: 0;
+        position: absolute;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      &:hover {
+        svg path {
+          fill: #888;
+        }
+      }
+
+      svg {
+        width: 19px;
+
+        path {
+          fill: #bbb;
+        }
+      }
+    }
+  }
+
+  &.raw-data-modal {
+    .modal-window {
+      width: 70%;
+      height: 85%;
+      min-height: 200px;
+    }
+  }
+}

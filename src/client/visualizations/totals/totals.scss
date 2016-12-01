@@ -1,0 +1,50 @@
+@import '../../imports';
+
+$total-single-width: 260px;
+$total-width: 176px;
+
+.totals {
+  .total-container {
+    position: absolute;
+    top: 60px;
+    width: 100%; // overwritten in JS if more than one total
+  }
+
+  .total {
+    display: inline-block;
+    width: $total-width;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 34px;
+
+    .measure-name {
+      @include ellipsis;
+      width: 100%;
+      cursor: default;
+      font-size: 15px;
+      padding-bottom: 8px;
+      color: #999;
+      user-select: text;
+    }
+
+    .measure-value {
+      width: 100%;
+      cursor: default;
+      font-size: 30px;
+      user-select: text;
+    }
+
+    &.single {
+      width: 100%;
+
+      .measure-name {
+        font-size: 20px;
+        padding-bottom: 11px;
+      }
+
+      .measure-value {
+        font-size: 40px;
+      }
+    }
+  }
+}
