@@ -1,0 +1,19 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "jspm_packages"
+  ]
+}

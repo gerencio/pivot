@@ -1,3 +1,4 @@
+.idea
 yarn.lock
 .DS_Store
 .idea/workspace.xml
@@ -9,6 +10,8 @@ build/
 public/
 private/
 coverage/
+src/**/*.js
+src/**/*.js.map
 assets/data/*-large.*
 webstorm/errors
 config.yaml

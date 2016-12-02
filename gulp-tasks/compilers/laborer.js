@@ -98,8 +98,11 @@ exports.taskClientTypeScript = function(opt) {
   opt = opt || {};
   var dontCache = opt.dontCache || false;
   var declaration = opt.declaration || false;
-  var strictNullChecks = opt.strictNullChecks || false;
-  var skipLibCheck = opt.skipLibCheck || false;
+  /**
+   * remove from typescript < 2.0
+   */
+  // var strictNullChecks = opt.strictNullChecks || false;
+  // var skipLibCheck = opt.skipLibCheck || false;
   var tsLintConfigHook = opt.tsLintConfigHook || identity;
 
   var tsProject = $.typescript.createProject({
@@ -109,8 +112,6 @@ exports.taskClientTypeScript = function(opt) {
     noImplicitReturns: true,
     noEmitOnError: true,
     removeComments: true,
-    strictNullChecks: strictNullChecks,
-    skipLibCheck: skipLibCheck,
     target: 'ES5',
     module: 'commonjs',
     moduleResolution: 'node',
