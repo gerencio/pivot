@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6
+FROM node:6
 
 # add project to build
 ADD . /root/pivot
