@@ -6,8 +6,6 @@
 node_modules/
 build/
 public/
-src/**/*.js
-src/**/*.js.map
 private/
 coverage/
 assets/data/*-large.*

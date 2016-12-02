@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 
-var laborer = require('laborer');
+var laborer = require('./gulp-tasks/compilers/laborer');
 
 gulp.task('style', laborer.taskStyle());
 gulp.task('icons', laborer.taskIcons());
