@@ -3,12 +3,12 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 
-var laborer = require('laborer');
+var laborer = require('./gulp-tasks/compilers/laborer');
 
 gulp.task('style', laborer.taskStyle());
 gulp.task('icons', laborer.taskIcons());
 
-gulp.task('client:tsc', laborer.taskClientTypeScript({ declaration: true }));
+gulp.task('client:tsc', laborer.taskClientTypeScript({ declaration: true , strictNullChecks: false ,  }));
 gulp.task('server:tsc', laborer.taskServerTypeScript({ declaration: true }));
 
 gulp.task('client:test', laborer.taskClientTest({reporter: 'progress'}));
